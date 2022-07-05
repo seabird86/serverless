@@ -6,7 +6,7 @@
 
 - go to console to configure aws cli:
   * $>aws configure
-  * enter access key ID AKIA2CDMTFVIPRNK7FE7 and secret Access Key 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
+  * enter access key ID XXXX and secret Access Key YYYY
 - Create new Sam Project
   * sam init -r java11 -d maven --app-template createCustomer -n createCustomer
   * go to project then $>sam build then $>sam deploy --guided
