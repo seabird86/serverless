@@ -1,3 +1,9 @@
+## AWS Services:
++ Lambda Function
++ IAM : Create a user with secret Key and role to deploy from console to cloud
++ CloudFormation > Stacks : view stack
++ S3: When deploy, it will automatically create a Bucket to store 'template file' and 'built image'
+
 
 - Login aws to create a user with access key and secret key:
   * Choose IAM -> users -> add user
@@ -11,9 +17,6 @@
   * sam init -r java11 -d maven --app-template createCustomer -n createCustomer
   * go to project then $>sam build then $>sam deploy --guided
 
-- Go to aws > CloudFormation
-
-
 - Edit file .aws>config
 
 ```
@@ -21,18 +24,15 @@
 region = us-east-1
 ```
 
-- Validate template.yaml file by:
+- Run local:
+  * $>sam build
   * $>sam validate
-
-- Run local
   * $>sam local invoke CreateCustomerFunction --event events/event.json
+- Run Cloud:
+  * $>aws lambda invoke --invocation-type RequestResponse --function-name {functionName} outputfile.txt
 
 
-  sam local invoke CreateCustomerFunction --event events/event.json
-
-  sam local invoke HelloWorldFunction --event events/event.json
-
-- project 'common' and 'createCustomerFunction' has the same version
+Note: Project 'common' and 'createCustomerFunction' need to configure the same version java 11, because AWS only support java 11
 
 ```
 <properties>
@@ -40,5 +40,3 @@ region = us-east-1
   <maven.compiler.target>11</maven.compiler.target>
 </properties>
 ```
-
-- aws lambda invoke --invocation-type RequestResponse --function-name customer-CreateCustomerFunction-id66TDWmWoBf outputfile.txt
