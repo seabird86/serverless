@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Create Customer API
+Globals:
+  Function:
+    Timeout: 20
+    MemorySize: 512
+    Runtime: java11
+    Environment:
+      Variables:
+        PARAM1: VALUE
+        # JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+
+Resources:
+  CreateCustomerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: customer
+      Handler: com.anhnt.customer.App::createCustomer
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref customer
+      Events:
+        CreateCustomerEvent:
+          Type: Api
+          Properties:
+            Path: /customers
+            Method: post
+
+  GetCustomerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: customer
+      Handler: com.anhnt.customer.App::getCustomer
+
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref customer
+      Events:
+        CreateCustomerEvent:
+          Type: Api
+          Properties:
+            Path: /customers/{id}
+            Method: get
+            # RequestParameters:
+            #   - method.request.path.id

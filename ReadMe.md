@@ -40,3 +40,13 @@ Note: Project 'common' and 'createCustomerFunction' need to configure the same v
   <maven.compiler.target>11</maven.compiler.target>
 </properties>
 ```
+
+
+```
+sam local invoke CreateCustomerFunction --event events/event-create.json
+sam local invoke GetCustomerFunction --event events/event-get.json
+```
+
+
+aws apigateway get-resources --rest-api-id 691717483856:CreateCustomerFunction --region us-east-1 --http-method POST --request-parameters method.request.path.id=28e9b440-a997-4a15-89c6-f3e3570be9d3
+ --authorization-type AWS_IAM
