@@ -1,14 +1,14 @@
 {
   "body": "",
   "resource": "/{proxy+}",
-  "path": "/customers/28e9b440-a997-4a15-89c6-f3e3570be9d3",
+  "path": "/customers/c44d4ea9-c97d-4bb8-9c5e-f38e31133283",
   "httpMethod": "GET",
   "isBase64Encoded": false,
   "queryStringParameters": {
     "foo": "bar"
   },
   "pathParameters": {
-    "id": "28e9b440-a997-4a15-89c6-f3e3570be9d3"
+    "id": "c44d4ea9-c97d-4bb8-9c5e-f38e31133283"
   },
   "stageVariables": {
     "baz": "qux"
@@ -53,7 +53,7 @@
       "userAgent": "Custom User Agent String",
       "user": null
     },
-    "path": "/prod/customers/28e9b440-a997-4a15-89c6-f3e3570be9d3",
+    "path": "/prod/customers/c44d4ea9-c97d-4bb8-9c5e-f38e31133283",
     "resourcePath": "/{proxy+}",
     "httpMethod": "POST",
     "apiId": "1234567890",

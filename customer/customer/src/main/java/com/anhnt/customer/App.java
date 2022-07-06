@@ -18,7 +18,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.anhnt.common.domain.customer.request.CreateCustomerRequest;
-import com.anhnt.common.domain.customer.response.CreateCustomerResponse;
+import com.anhnt.common.domain.customer.response.CreateCustomerStrResponse;
 import com.anhnt.common.domain.customer.response.GetCustomerResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -41,7 +41,7 @@ public class App{
         customerTable.putItem(item);
           return response
                   .withStatusCode(200)
-                  .withBody(objectMapper.writeValueAsString(new CreateCustomerResponse(4l)));
+                  .withBody(objectMapper.writeValueAsString(new CreateCustomerStrResponse(item.getString("id"))));
       } catch (IOException e) {
           e.printStackTrace();
           return response.withStatusCode(500).withBody("{}");

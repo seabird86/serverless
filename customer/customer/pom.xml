@@ -2,10 +2,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>anhnt</groupId>
-    <artifactId>CreateCustomer</artifactId>
+    <artifactId>Customer</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-    <name>A Create Customer for SAM CLI.</name>
+    <name>Customer Service for SAM CLI.</name>
     <properties>
       <!-- <java.version>11</java.version> -->
       <maven.compiler.source>11</maven.compiler.source>
