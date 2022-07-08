@@ -25,8 +25,18 @@
         </dependency>
         <dependency>
           <groupId>com.amazonaws</groupId>
+          <artifactId>aws-java-sdk-s3</artifactId>
+          <version>1.12.254</version>
+        </dependency>
+        <dependency>
+          <groupId>com.amazonaws</groupId>
+          <artifactId>aws-java-sdk-sns</artifactId>
+          <version>1.12.254</version>
+        </dependency>
+        <dependency>
+          <groupId>com.amazonaws</groupId>
           <artifactId>aws-java-sdk-dynamodb</artifactId>
-          <version>1.12.253</version>
+          <version>1.12.254</version>
         </dependency>
         <dependency>
           <groupId>org.projectlombok</groupId>
